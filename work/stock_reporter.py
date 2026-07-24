@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Stock picker - daily morning report"""
 
 import json
@@ -34,29 +34,29 @@ WATCH_LIST = [
 ]
 
 SECTOR_MAP = {
-    "sh600396":"电力","sh600011":"电力","sh600023":"电力","sh600027":"电力",
-    "sh600886":"电力","sh600795":"电力","sh601985":"电力","sh600900":"电力",
-    "sh600036":"银行","sh600016":"银行","sh601398":"银行","sh601939":"银行",
-    "sh600030":"券商","sh601211":"券商","sh601318":"保险","sh601628":"保险",
-    "sh600703":"半导体","sh600745":"半导体","sh603986":"半导体","sh600460":"半导体",
-    "sh600584":"半导体","sh600171":"半导体","sh688981":"半导体","sh688012":"半导体",
-    "sh600438":"光伏","sh601012":"光伏","sh600089":"电力设备","sh600150":"船舶","sh601615":"风电","sh600031":"机械",
-    "sh600519":"白酒","sh600809":"白酒","sh600887":"食品","sh600690":"家电",
-    "sh600276":"医药","sh600196":"医药","sh600085":"中药","sh600763":"医药",
-    "sh600418":"汽车","sh600104":"汽车","sh600585":"建材","sh600019":"钢铁","sh600010":"钢铁",
-    "sh600050":"通信","sh600941":"通信","sh601728":"通信",
-    "sz000001":"银行","sz000002":"地产","sz000333":"家电","sz000651":"电器",
-    "sz000725":"消费电子","sz000858":"白酒","sz000568":"白酒","sz000625":"汽车",
-    "sz000063":"通信","sz000100":"面板","sz000301":"化纤","sz000338":"机械",
-    "sz000596":"白酒","sz000547":"军工","sz000768":"军工","sz000661":"医药",
-    "sz002415":"安防","sz002594":"新能源车","sz002475":"消费电子","sz002714":"养殖",
-    "sz002920":"军工","sz002230":"AI","sz002352":"快递","sz002236":"安防",
-    "sz002460":"锂矿","sz002709":"锂电","sz002812":"锂电","sz002821":"农业","sz002850":"锂电",
-    "sz300750":"锂电","sz300059":"券商","sz300760":"医药","sz300124":"机械",
-    "sz300274":"光伏","sz300347":"医药","sz300413":"VR","sz300433":"面板",
-    "sz300450":"医药","sz300502":"通信","sz300661":"材料","sz300676":"芯片",
-    "sz300699":"军工","sz300751":"医药","sz300896":"电商","sz300900":"航运","sz300919":"芯片",
-    "sz300999":"食品",
+    "sh600396":"鐢靛姏","sh600011":"鐢靛姏","sh600023":"鐢靛姏","sh600027":"鐢靛姏",
+    "sh600886":"鐢靛姏","sh600795":"鐢靛姏","sh601985":"鐢靛姏","sh600900":"鐢靛姏",
+    "sh600036":"閾惰","sh600016":"閾惰","sh601398":"閾惰","sh601939":"閾惰",
+    "sh600030":"鍒稿晢","sh601211":"鍒稿晢","sh601318":"淇濋櫓","sh601628":"淇濋櫓",
+    "sh600703":"鍗婂浣?,"sh600745":"鍗婂浣?,"sh603986":"鍗婂浣?,"sh600460":"鍗婂浣?,
+    "sh600584":"鍗婂浣?,"sh600171":"鍗婂浣?,"sh688981":"鍗婂浣?,"sh688012":"鍗婂浣?,
+    "sh600438":"鍏変紡","sh601012":"鍏変紡","sh600089":"鐢靛姏璁惧","sh600150":"鑸硅埗","sh601615":"椋庣數","sh600031":"鏈烘",
+    "sh600519":"鐧介厭","sh600809":"鐧介厭","sh600887":"椋熷搧","sh600690":"瀹剁數",
+    "sh600276":"鍖昏嵂","sh600196":"鍖昏嵂","sh600085":"涓嵂","sh600763":"鍖昏嵂",
+    "sh600418":"姹借溅","sh600104":"姹借溅","sh600585":"寤烘潗","sh600019":"閽㈤搧","sh600010":"閽㈤搧",
+    "sh600050":"閫氫俊","sh600941":"閫氫俊","sh601728":"閫氫俊",
+    "sz000001":"閾惰","sz000002":"鍦颁骇","sz000333":"瀹剁數","sz000651":"鐢靛櫒",
+    "sz000725":"娑堣垂鐢靛瓙","sz000858":"鐧介厭","sz000568":"鐧介厭","sz000625":"姹借溅",
+    "sz000063":"閫氫俊","sz000100":"闈㈡澘","sz000301":"鍖栫氦","sz000338":"鏈烘",
+    "sz000596":"鐧介厭","sz000547":"鍐涘伐","sz000768":"鍐涘伐","sz000661":"鍖昏嵂",
+    "sz002415":"瀹夐槻","sz002594":"鏂拌兘婧愯溅","sz002475":"娑堣垂鐢靛瓙","sz002714":"鍏绘畺",
+    "sz002920":"鍐涘伐","sz002230":"AI","sz002352":"蹇€?,"sz002236":"瀹夐槻",
+    "sz002460":"閿傜熆","sz002709":"閿傜數","sz002812":"閿傜數","sz002821":"鍐滀笟","sz002850":"閿傜數",
+    "sz300750":"閿傜數","sz300059":"鍒稿晢","sz300760":"鍖昏嵂","sz300124":"鏈烘",
+    "sz300274":"鍏変紡","sz300347":"鍖昏嵂","sz300413":"VR","sz300433":"闈㈡澘",
+    "sz300450":"鍖昏嵂","sz300502":"閫氫俊","sz300661":"鏉愭枡","sz300676":"鑺墖",
+    "sz300699":"鍐涘伐","sz300751":"鍖昏嵂","sz300896":"鐢靛晢","sz300900":"鑸繍","sz300919":"鑺墖",
+    "sz300999":"椋熷搧",
 }
 
 
@@ -86,7 +86,7 @@ def fetch_quotes(codes):
             if prev_close == 0: continue
             chg_pct = round((current - prev_close) / prev_close * 100, 2)
             amplitude = round((high - low) / prev_close * 100, 2) if prev_close else 0
-            sector = SECTOR_MAP.get(code, "其他")
+            sector = SECTOR_MAP.get(code, "鍏朵粬")
             results.append({"code":code,"name":name,"current":current,"prev_close":prev_close,
                 "chg_pct":chg_pct,"amplitude":amplitude,"volume":vol,"amount":amount,
                 "high":high,"low":low,"open":open_p,"sector":sector})
@@ -132,7 +132,8 @@ def calc_macd(values):
     def ema(d,p):
         m=2.0/(p+1); r=[]; e=None
         for v in d:
-            if e is None: e=v; else: e=(v-e)*m+e; r.append(e)
+            if e is None: e=v
+            else: e=(v-e)*m+e; r.append(e)
         return r
     e12=ema(values,12); e26=ema(values,26)
     dif=[a-b for a,b in zip(e12,e26)]; dea=ema(dif,9)
@@ -141,46 +142,46 @@ def calc_macd(values):
 
 def score_stock(stock):
     klines = fetch_kline(stock["code"])
-    if len(klines) < 15: return 0, "数据不足"
+    if len(klines) < 15: return 0, "鏁版嵁涓嶈冻"
     closes = [float(k.get("close",0)) for k in klines]
-    if not closes or closes[-1]==0: return 0, "数据异常"
+    if not closes or closes[-1]==0: return 0, "鏁版嵁寮傚父"
     scores=[]; reasons=[]
     yest = stock["chg_pct"]
-    if -1<=yest<=5: scores.append(2); reasons.append("涨跌幅适中")
-    elif yest>5 and yest<9.8: scores.append(1); reasons.append("昨日偏强")
-    elif yest>=9.8: scores.append(0); reasons.append("已涨停⚠️")
+    if -1<=yest<=5: scores.append(2); reasons.append("娑ㄨ穼骞呴€備腑")
+    elif yest>5 and yest<9.8: scores.append(1); reasons.append("鏄ㄦ棩鍋忓己")
+    elif yest>=9.8: scores.append(0); reasons.append("宸叉定鍋溾殸锔?)
     if len(klines)>=5:
         avg5 = sum(int(k.get("volume",0)) for k in klines[-5:])/5
         if avg5>0:
             vr=stock["volume"]/avg5
-            if 1.0<=vr<=3.0: scores.append(2); reasons.append("量能适中(健康)")
-            elif vr>3.0: scores.append(1); reasons.append("放量明显")
-            else: scores.append(-1); reasons.append("缩量⚠️")
+            if 1.0<=vr<=3.0: scores.append(2); reasons.append("閲忚兘閫備腑(鍋ュ悍)")
+            elif vr>3.0: scores.append(1); reasons.append("鏀鹃噺鏄庢樉")
+            else: scores.append(-1); reasons.append("缂╅噺鈿狅笍")
     sma5=calc_sma(closes,5); sma20=calc_sma(closes,20)
     if sma5 and sma5[-1] and sma20 and sma20[-1]:
-        if sma5[-1]>sma20[-1]: scores.append(2); reasons.append("多头趋势(MA5>MA20)")
-        else: scores.append(-1); reasons.append("空头趋势")
+        if sma5[-1]>sma20[-1]: scores.append(2); reasons.append("澶氬ご瓒嬪娍(MA5>MA20)")
+        else: scores.append(-1); reasons.append("绌哄ご瓒嬪娍")
     if sma5 and sma5[-1] and sma5[-1]>0:
         dev=(stock["current"]-sma5[-1])/sma5[-1]*100
-        if -2<=dev<=3: scores.append(2); reasons.append("贴近MA5(技术买点)")
-        elif dev>8: scores.append(-2); reasons.append("偏离MA5过大⚠️")
+        if -2<=dev<=3: scores.append(2); reasons.append("璐磋繎MA5(鎶€鏈拱鐐?")
+        elif dev>8: scores.append(-2); reasons.append("鍋忕MA5杩囧ぇ鈿狅笍")
         else: scores.append(0)
     amp=stock["amplitude"]
-    if 1<=amp<=5: scores.append(1); reasons.append("振幅适中")
-    elif amp>8: scores.append(-1); reasons.append("波动过大⚠️")
+    if 1<=amp<=5: scores.append(1); reasons.append("鎸箙閫備腑")
+    elif amp>8: scores.append(-1); reasons.append("娉㈠姩杩囧ぇ鈿狅笍")
     rsi_vals=calc_rsi(closes)
     if rsi_vals and rsi_vals[-1] is not None:
         rv=rsi_vals[-1]
-        if 30<=rv<=60: scores.append(2); reasons.append(f"RSI适中有空间({rv:.0f})")
-        elif 60<rv<=75: scores.append(1); reasons.append(f"RSI偏强({rv:.0f})")
-        elif rv>75: scores.append(-2); reasons.append(f"RSI超买({rv:.0f})⚠️")
-        elif rv<30: scores.append(0); reasons.append(f"RSI超卖({rv:.0f})")
+        if 30<=rv<=60: scores.append(2); reasons.append(f"RSI閫備腑鏈夌┖闂?{rv:.0f})")
+        elif 60<rv<=75: scores.append(1); reasons.append(f"RSI鍋忓己({rv:.0f})")
+        elif rv>75: scores.append(-2); reasons.append(f"RSI瓒呬拱({rv:.0f})鈿狅笍")
+        elif rv<30: scores.append(0); reasons.append(f"RSI瓒呭崠({rv:.0f})")
     dif,dea,macd=calc_macd(closes)
     if macd and len(macd)>=2:
-        if macd[-1]>0 and macd[-1]>macd[-2]: scores.append(2); reasons.append("MACD金叉红柱放大(强势)")
-        elif macd[-1]>0 and macd[-1]<=macd[-2]: scores.append(0); reasons.append("MACD红柱走平")
-        elif macd[-1]>macd[-2]: scores.append(1); reasons.append("MACD绿柱缩短(拐点)")
-        else: scores.append(-2); reasons.append("MACD死叉⚠️")
+        if macd[-1]>0 and macd[-1]>macd[-2]: scores.append(2); reasons.append("MACD閲戝弶绾㈡煴鏀惧ぇ(寮哄娍)")
+        elif macd[-1]>0 and macd[-1]<=macd[-2]: scores.append(0); reasons.append("MACD绾㈡煴璧板钩")
+        elif macd[-1]>macd[-2]: scores.append(1); reasons.append("MACD缁挎煴缂╃煭(鎷愮偣)")
+        else: scores.append(-2); reasons.append("MACD姝诲弶鈿狅笍")
     return sum(scores), " | ".join(reasons[:5])
 
 
@@ -202,11 +203,11 @@ def format_report(stocks):
 h1{{font-size:22px;color:#2c3e50}}th{{background:#3498db;color:#fff;padding:12px}}
 tr:nth-child(even){{background:#f8f9fa}}.footer{{margin-top:20px;font-size:12px;color:#bdc3c7;text-align:center}}
 </style></head><body><div class="container">
-<h1>{today} 早盘选股参考</h1>
-<p style="color:#95a5a6">全市场筛选 · 基于技术指标 · 仅供参考</p>
-<table width="100%" cellspacing="0"><tr><th>#</th><th>股票</th><th>代码</th><th>行业</th><th>收盘价</th><th>涨跌幅</th><th>逻辑</th></tr>
+<h1>{today} 鏃╃洏閫夎偂鍙傝€?/h1>
+<p style="color:#95a5a6">鍏ㄥ競鍦虹瓫閫?路 鍩轰簬鎶€鏈寚鏍?路 浠呬緵鍙傝€?/p>
+<table width="100%" cellspacing="0"><tr><th>#</th><th>鑲＄エ</th><th>浠ｇ爜</th><th>琛屼笟</th><th>鏀剁洏浠?/th><th>娑ㄨ穼骞?/th><th>閫昏緫</th></tr>
 {rows}</table>
-<div class="footer">AI自动生成，不构成投资建议<br>股市有风险，投资需谨慎</div>
+<div class="footer">AI鑷姩鐢熸垚锛屼笉鏋勬垚鎶曡祫寤鸿<br>鑲″競鏈夐闄╋紝鎶曡祫闇€璋ㄦ厧</div>
 </div></body></html>"""
 
 
@@ -233,16 +234,17 @@ def main():
     scored.sort(key=lambda x:x["score"], reverse=True)
     picks=[]; sec_cnt={}
     for p in scored[:8]:
-        s=p.get("sector","其他")
+        s=p.get("sector","鍏朵粬")
         if sec_cnt.get(s,0)<2: picks.append(p); sec_cnt[s]=sec_cnt.get(s,0)+1
     picks=picks[:6]
     for i,p in enumerate(picks,1):
         print(f"  {i}. {p['name']}({p['code']}) {p['current']:.2f} {p['chg_pct']:+.2f}% | Score:{p['score']}")
     html=format_report(picks)
-    if send_email(f"股票早报 {datetime.now().strftime('%Y-%m-%d')}", html):
+    if send_email(f"鑲＄エ鏃╂姤 {datetime.now().strftime('%Y-%m-%d')}", html):
         print("Email sent!")
     else:
         print("Failed to send"); sys.exit(1)
 
 if __name__=="__main__":
     main()
+
