@@ -1,0 +1,24 @@
+name: Morning Stock Report
+
+on:
+  schedule:
+    - cron: "45 0 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  stock-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run stock picker
+        env:
+          SMTP_HOST: "smtp.qq.com"
+          SMTP_PORT: "465"
+          SMTP_USER: "3306450835@qq.com"
+          SMTP_PASS: ${{ secrets.QQMAIL_AUTH }}
+          MAIL_TO: "3306450835@qq.com"
+        run: python work/stock_reporter.py
